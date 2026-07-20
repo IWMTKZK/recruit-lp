@@ -1,0 +1,374 @@
+/**
+ * Silk Kanazawa 求人LP - 追加スタイル
+ * style.css のデザインシステム（CSS変数）を前提とした求人ページ専用コンポーネント
+ */
+
+/* ===== Points Section（features-gridの4〜6番目の遅延） ===== */
+.features-grid .scroll-reveal:nth-child(4) { transition-delay: 0ms; }
+.features-grid .scroll-reveal:nth-child(5) { transition-delay: 100ms; }
+.features-grid .scroll-reveal:nth-child(6) { transition-delay: 200ms; }
+
+/* ===== Hero ===== */
+/* 「週3日〜OK」などの数値が途中で折り返されないように */
+.hero-stat strong {
+  white-space: nowrap;
+}
+
+/* ===== Job Section ===== */
+.job-note {
+  margin-top: var(--space-8);
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--kaga-grey);
+  line-height: var(--leading-relaxed);
+}
+
+/* ===== Salary Section ===== */
+.section.salary {
+  background: linear-gradient(180deg, var(--snow-cream) 0%, var(--skin-warm) 100%);
+}
+
+.salary-formula {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  max-width: 720px;
+  margin: 0 auto var(--space-12);
+  padding: var(--space-6) var(--space-8);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glass);
+}
+
+.salary-formula-item {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.salary-formula-rate {
+  color: var(--gold-dark);
+}
+
+.salary-formula-result {
+  padding: var(--space-2) var(--space-5);
+  background: var(--gold-gradient);
+  border-radius: var(--radius-full);
+  color: var(--snow-white);
+  box-shadow: var(--shadow-gold);
+}
+
+.salary-formula-op {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--kaga-grey);
+}
+
+.salary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  align-items: stretch;
+}
+
+.salary-grid .scroll-reveal:nth-child(1) { transition-delay: 0ms; }
+.salary-grid .scroll-reveal:nth-child(2) { transition-delay: 80ms; }
+.salary-grid .scroll-reveal:nth-child(3) { transition-delay: 160ms; }
+
+.salary-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-8) var(--space-6);
+  background: var(--snow-white);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.salary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.salary-card-featured {
+  border: 2px solid var(--gold-primary);
+  box-shadow: var(--shadow-gold);
+}
+
+.salary-card-badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: var(--space-1) var(--space-4);
+  background: var(--gold-gradient);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--snow-white);
+  white-space: nowrap;
+  box-shadow: var(--shadow-gold);
+}
+
+.salary-card-label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--kaga-grey);
+  margin-bottom: var(--space-2);
+}
+
+.salary-card-rate {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--gold-dark);
+  margin-bottom: var(--space-5);
+}
+
+.salary-calc {
+  list-style: none;
+  margin: 0 0 var(--space-6);
+  padding: var(--space-4);
+  background: var(--snow-light);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--charcoal-light);
+  line-height: var(--leading-relaxed);
+}
+
+.salary-calc strong {
+  color: var(--charcoal);
+}
+
+.salary-total {
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--glass-border);
+  font-size: var(--text-base);
+  color: var(--charcoal-light);
+}
+
+.salary-total strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: var(--leading-tight);
+  margin-top: var(--space-1);
+}
+
+.salary-card-featured .salary-total strong {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.salary-notes {
+  list-style: none;
+  max-width: 720px;
+  margin: var(--space-10) auto 0;
+  padding: 0;
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--kaga-grey);
+  line-height: var(--leading-loose);
+}
+
+/* ===== Requirements Table ===== */
+.recruit-table-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--snow-white);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.recruit-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recruit-table th,
+.recruit-table td {
+  padding: var(--space-5) var(--space-6);
+  text-align: left;
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  border-bottom: 1px solid var(--snow-light);
+}
+
+.recruit-table tr:last-child th,
+.recruit-table tr:last-child td {
+  border-bottom: none;
+}
+
+.recruit-table th {
+  width: 30%;
+  background: var(--snow-cream);
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--gold-dark);
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.recruit-table td {
+  color: var(--charcoal-light);
+}
+
+/* ===== Application Flow ===== */
+.section.flow {
+  background: var(--snow-light);
+}
+
+.flow-steps {
+  list-style: none;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0;
+  counter-reset: flow;
+}
+
+.flow-step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-5);
+  padding-bottom: var(--space-10);
+}
+
+.flow-step:last-child {
+  padding-bottom: 0;
+}
+
+/* ステップをつなぐ縦ライン */
+.flow-step::before {
+  content: "";
+  position: absolute;
+  top: 48px;
+  left: 23px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--gold-primary), var(--gold-light));
+}
+
+.flow-step:last-child::before {
+  display: none;
+}
+
+.flow-step-number {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--gold-gradient);
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--snow-white);
+  box-shadow: var(--shadow-gold);
+}
+
+.flow-step-content {
+  flex: 1;
+  padding: var(--space-5) var(--space-6);
+  background: var(--snow-white);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.flow-step-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: var(--space-2);
+}
+
+.flow-step-description {
+  font-size: var(--text-sm);
+  color: var(--charcoal-light);
+  line-height: var(--leading-relaxed);
+}
+
+.flow-steps .scroll-reveal:nth-child(1) { transition-delay: 0ms; }
+.flow-steps .scroll-reveal:nth-child(2) { transition-delay: 80ms; }
+.flow-steps .scroll-reveal:nth-child(3) { transition-delay: 160ms; }
+.flow-steps .scroll-reveal:nth-child(4) { transition-delay: 240ms; }
+
+/* ===== Responsive ===== */
+@media (max-width: 960px) {
+  .salary-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* 縦積み時はカード順の遅延をリセット */
+  .salary-grid .scroll-reveal:nth-child(n) { transition-delay: 0ms; }
+}
+
+@media (max-width: 640px) {
+  .salary-formula {
+    padding: var(--space-5) var(--space-4);
+    gap: var(--space-2);
+  }
+
+  .salary-formula-item {
+    font-size: var(--text-base);
+  }
+
+  .salary-formula-op {
+    font-size: var(--text-lg);
+  }
+
+  .recruit-table th,
+  .recruit-table td {
+    display: block;
+    width: 100%;
+    padding: var(--space-3) var(--space-5);
+  }
+
+  .recruit-table th {
+    padding-bottom: 0;
+    background: transparent;
+    border-bottom: none;
+  }
+
+  .recruit-table td {
+    padding-top: var(--space-1);
+  }
+
+  .flow-step {
+    gap: var(--space-4);
+  }
+
+  .flow-step-number {
+    width: 40px;
+    height: 40px;
+    font-size: var(--text-lg);
+  }
+
+  .flow-step::before {
+    top: 40px;
+    left: 19px;
+  }
+}
