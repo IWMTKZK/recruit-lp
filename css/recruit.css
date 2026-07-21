@@ -338,6 +338,16 @@
   .salary-grid .scroll-reveal:nth-child(n) { transition-delay: 0ms; }
 }
 
+@media (max-width: 768px) {
+  /* ヒーロー見出しの金色文字「未経験から、手に職。」が背景の金色グロー（1つ目のradial-gradient）と
+     重なって読みにくくなるため、モバイルのみ金色グローを除去。ラベンダーとコーラルは維持。 */
+  .spline-fallback {
+    background:
+      radial-gradient(circle at 80% 70%, var(--accent-lavender-glow) 0%, transparent 40%),
+      radial-gradient(circle at 60% 50%, rgba(255, 123, 123, 0.15) 0%, transparent 35%);
+  }
+}
+
 @media (max-width: 640px) {
   .salary-formula {
     padding: var(--space-5) var(--space-4);
