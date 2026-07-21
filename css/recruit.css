@@ -161,11 +161,12 @@
 .salary-total strong {
   display: block;
   font-family: var(--font-display);
-  font-size: var(--text-4xl);
+  font-size: var(--text-3xl);
   font-weight: 700;
   color: var(--charcoal);
   line-height: var(--leading-tight);
   margin-top: var(--space-1);
+  white-space: nowrap;
 }
 
 .salary-card-featured .salary-total strong {
@@ -313,6 +314,17 @@
 .flow-steps .scroll-reveal:nth-child(2) { transition-delay: 80ms; }
 .flow-steps .scroll-reveal:nth-child(3) { transition-delay: 160ms; }
 .flow-steps .scroll-reveal:nth-child(4) { transition-delay: 240ms; }
+
+/* ===== Header Logo（モバイル視認性改善） ===== */
+/* style.cssの金色グラデーション文字（薄いgold-primary系）はコントラストが低く、
+   白背景（.header.scrolled等）で読みにくいため、濃いゴールドで上書き。
+   全ビューポート共通（白背景 #FFFFFF に対してコントラスト比 約3.8:1〜5.3:1を確保）。 */
+.header-logo {
+  background: linear-gradient(135deg, var(--gold-dark) 0%, #8A6530 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 /* ===== Responsive ===== */
 @media (max-width: 960px) {
