@@ -326,6 +326,24 @@
   -webkit-text-fill-color: transparent;
 }
 
+/* ===== Hero Highlight（見出し視認性改善） ===== */
+/* style.cssの薄いgold-gradient（--gold-gradient: #E8C58A→#D4A95F→#A67B3C）は、
+   ヒーローの明るいオーバーレイ背景（約 #F5EBE5）に対してコントラストが不足し、
+   背景写真の模様と重なると読みにくいため、Header Logoと同系統の濃いアンティーク
+   ゴールドで上書き。PC・スマホ共通（メディアクエリ外のグローバル上書き）。
+   グラデーション両端色のコントラスト比（背景 #F5EBE5 に対し、WCAG相対輝度式で算出）:
+     #96692F : 約4.11:1
+     #7A5526 : 約5.67:1
+   （いずれも 3.5:1 以上を確保）。写真の模様に重なっても読めるよう、
+   ごく控えめな明るいハローを drop-shadow で付与（派手な白フチにはしない）。 */
+.hero-title .highlight {
+  background: linear-gradient(135deg, #96692F 0%, #7A5526 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 3px rgba(255, 251, 248, 0.8));
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 960px) {
   .salary-grid {
